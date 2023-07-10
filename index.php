@@ -15,22 +15,22 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">Блог</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="#">Обо мне</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Contacts
+                                Контакты
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">+79116727775</a></li>
+                                <li><a class="dropdown-item" href="#">rubetskirill0110@yandex.ru</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -41,7 +41,7 @@
 
     <section>
         <div class="container bodyblog">
-            <h1 class="mt-3 mb-3">Welcome to my Blog!</h1>
+            <h1 class="mt-3 mb-3">Добро пожаловать на мой Блог!</h1>
             <div class="container-fluid row posts">
                 <div class="card p-1" style="width: 20rem;">
                     <img src="source/images/my-first-site-on-bs5.PNG" class="card-img-top" alt="...">
