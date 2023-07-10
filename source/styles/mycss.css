@@ -1,0 +1,8 @@
+.bodyblog>h1 {
+    text-align: center;
+}
+
+.posts {
+    display: flex;
+    justify-content: center;
+}
