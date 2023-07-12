@@ -1,0 +1,22 @@
+{
+    "name": "aser/my-blog",
+    "description": "Blog on PHP use MySQL",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Aser\\MyBlog\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kirill",
+            "email": "rubetskirill0110@yandex.ru"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.6",
+        "twig/twig": "^3.6"
+    }
+}
