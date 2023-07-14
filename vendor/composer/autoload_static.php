@@ -39,9 +39,9 @@ class ComposerStaticInitb8ba3e6790c27ba057ff6ed68633b162
             'Fig\\Http\\Message\\' => 17,
             'FastRoute\\' => 10,
         ),
-        'A' => 
+        'B' => 
         array (
-            'Aser\\MyBlog\\' => 12,
+            'Blog\\' => 5,
         ),
     );
 
@@ -96,7 +96,7 @@ class ComposerStaticInitb8ba3e6790c27ba057ff6ed68633b162
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
         ),
-        'Aser\\MyBlog\\' => 
+        'Blog\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

@@ -3,7 +3,7 @@
         'name' => 'aser/my-blog',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '5850b2551265c4823221cd4d77cd80608049d76a',
+        'reference' => '0562ab86d04dbf771777107dbbcb5bd257438293',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'aser/my-blog' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '5850b2551265c4823221cd4d77cd80608049d76a',
+            'reference' => '0562ab86d04dbf771777107dbbcb5bd257438293',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

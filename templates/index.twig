@@ -4,56 +4,27 @@
 <section>
     <div class="container">
         <h1 class="mt-3 mb-3 text-center">Добро пожаловать на мой Блог!</h1>
-        <div class="container-fluid row justify-content-center">
-            <div class="card p-1" style="width: 20rem;">
-                <img src="source/images/my-first-site-on-bs5.PNG" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="/blog-post-1" class="btn btn-primary">Go somewhere</a>
+        {% set rowCount = 1 %}
+        {% for post in posts %}
+            {% if rowCount == 1 %}
+                <div class="container-fluid row justify-content-center m-0">
+            {% endif %}
+                <div class="card p-1 m-1" style="width: 25rem;">
+                    <img src="src/images/my-first-site-on-bs5.PNG" class="card-img-top" alt={{ post.title|escape }}>
+                    <div class="card-body">
+                        <a class="text-decoration-none" href="/{{ post.url_key }}"><h5 class="card-title"> {{ post.title|escape }} </h5></a>
+                        <p class="card-text"> {{ post.description|escape[:100] }}... </p>
+                        <a href="/{{ post.url_key }} " class="text-decoration-none">Подробнее</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card p-1" style="width: 20rem;">
-                <img src="source/images/my-first-site-on-bs5.PNG" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="/blog-post-2" class="btn btn-primary">Go somewhere</a>
+            {% set rowCount = rowCount + 1 %}
+            {% if rowCount == 1 %}
                 </div>
-            </div>
-            <div class="card p-1" style="width: 20rem;">
-                <img src="source/images/my-first-site-on-bs5.PNG" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="/blog-post-3" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card p-1" style="width: 20rem;">
-                <img src="source/images/my-first-site-on-bs5.PNG" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card p-1" style="width: 20rem;">
-                <img src="source/images/my-first-site-on-bs5.PNG" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card p-1" style="width: 20rem;">
-                <img src="source/images/my-first-site-on-bs5.PNG" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
+            {% endif %}
+            {% if rowCount > 3 %}
+                {% set rowCount = 1 %}
+            {% endif %}
+        {% endfor %}
     </div>
 </section>
 {% endblock %}
