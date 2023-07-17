@@ -6,7 +6,9 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 use Twig\Environment;
 use \Twig\Loader\FilesystemLoader;
+use Blog\LatestPost;
 use Blog\PostMapper;
+use Blog\Slim\TwigMiddleware;
 
 require __DIR__ . '/vendor/autoload.php';
 
@@ -26,12 +28,13 @@ $connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     die();
 }
 
-$postMapper = new PostMapper($connection);
-
 $app = AppFactory::create();
 
-$app->get('/', function (Request $request, Response $response, $args) use ($view, $postMapper) {
-    $posts = $postMapper->getList('DESC');
+$app->add(new TwigMiddleware($view));
+
+$app->get('/', function (Request $request, Response $response) use ($view, $connection) {
+    $latestPost = new LatestPost($connection);
+    $posts = $latestPost->get(3);
     
     $body = $view->render('index.twig', [
         'posts' => $posts
@@ -40,7 +43,7 @@ $app->get('/', function (Request $request, Response $response, $args) use ($view
     return $response;
 });
 
-$app->get('/about', function (Request $request, Response $response, $args) use ($view) {
+$app->get('/about', function (Request $request, Response $response) use ($view) {
     $body = $view->render('about.twig', [
         'name' => 'Kirill'
     ]);
@@ -48,7 +51,28 @@ $app->get('/about', function (Request $request, Response $response, $args) use (
     return $response;
 });
 
-$app->get('/{url_key}', function (Request $request, Response $response, $args) use ($view, $postMapper) {
+$app->get('/blog[/{page}]', function (Request $request, Response $response, $args) use ($view, $connection) {
+    $postMapper = new PostMapper($connection);
+
+    $page = isset($args['page']) ? (int) $args['page'] : 1;
+    $limit = 2;
+    
+    $posts = $postMapper->getList($page, $limit, 'DESC');
+    
+    $totalCount = $postMapper->getTotalCount();
+    $body = $view->render('blog.twig', [
+        'posts' => $posts,
+        'pagination' => [
+            'current' => $page,
+            'paging' => ceil($totalCount / $limit)
+        ]
+    ]);
+    $response->getBody()->write($body);
+    return $response;
+});
+
+$app->get('/{url_key}', function (Request $request, Response $response, $args) use ($view, $connection) {
+    $postMapper = new PostMapper($connection);
     $post = $postMapper->getByUrlKey((string) $args['url_key']);
     if (empty($post)) {
         $body = $view->render('not-found.twig');

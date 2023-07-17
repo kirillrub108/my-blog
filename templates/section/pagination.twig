@@ -1,0 +1,15 @@
+<nav class="p-0" aria-label="Пагинация Блога">
+    <ul class="pagination">
+        {% if pagination.current > 1 %}
+            <li class="page-item"><a class="page-link" href="{{ url('blog/' ~ (pagination.current - 1)) }}">Назад</a></li>
+        {% endif %}
+        {% for page in 1..pagination.paging %}
+            <li class="page-item {% if pagination.current == page %} active {% endif %} ">
+                <a class="page-link" href="{{ url('blog/' ~ page) }}"> {{ page }} </a>
+            </li>
+        {% endfor %}
+        {% if pagination.current < pagination.paging %}
+        <li class="page-item"><a class="page-link" href="{{ url('blog/' ~ (pagination.current + 1)) }}">Вперёд</a></li>
+        {% endif %}
+    </ul>
+</nav>

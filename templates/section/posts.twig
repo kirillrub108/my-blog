@@ -1,0 +1,27 @@
+{% for post in posts %}
+<div class="row mb-2 bg-light">
+    {% if post.image_path is not null %}
+    <div class="card p-3">
+        <img src="{{ asset_url(post.image_path) }}" class="card-img-top rounded-2" alt={{ post.title|escape }}>
+        <div class="card-body">
+            <a class="text-decoration-none" href="{{ url(post.url_key) }}">
+                <h5 class="card-title"> {{ post.title|escape }} </h5>
+            </a>
+            <p class="card-text"> {{ post.description|escape[:100] }}... </p>
+            <a href="{{ url(post.url_key) }} " class="text-decoration-none">Подробнее</a>
+        </div>
+    </div>
+    {% endif %}
+    {% if post.image_path is null%}
+    <div class="card p-3">
+        <div class="card-body">
+            <a class="text-decoration-none" href="{{ url(post.url_key) }}">
+                <h5 class="card-title"> {{ post.title|escape }} </h5>
+            </a>
+            <p class="card-text"> {{ post.description|escape[:100] }}... </p>
+            <a href="{{ url(post.url_key) }} " class="text-decoration-none">Подробнее</a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endfor %}

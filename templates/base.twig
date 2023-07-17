@@ -10,11 +10,18 @@
     <title>Blog</title>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     
 {% include "section/navbar.twig" %}
-{% block body %}{% endblock %}
+<div class="container">
+    {% block body %}{% endblock %}
+</div>
 
+<footer class="footer bg-light p-3 mt-auto">
+    <div class="container">
+        <span class="text-muted">&copy; {{ "now"|date('Y') }} Кирилл Рубец </span>
+    </div>
+</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
