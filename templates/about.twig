@@ -1,7 +1,18 @@
 {% extends 'base.twig' %}
 
 {% block body %}
-<div class="container">
-    <h1>Hello, {{ name }}!</h1>
-</div>
+    <div class="container-fluid text-center">
+        <h1 class="title mt-5">Привет, я Кирилл!</h1>
+        <h3 class="mt-4 text">Я неплохо владею html, css и javascript, умею пользоваться Bootstrap.</h3>
+        <h3 class="mt-2 text">Хорошо знаю PHP, использую Laravel, шаблонизатор Twig и Composer.</h3>
+        <h3 class="mt-2 text">Также использую СУБД. Пользовался Slim. Знаю ООП.</h3>
+    </div>
+
+    <div class="container-fluid text-center mt-2">
+        <a href="https://github.com/kirillrub108?tab=repositories" class="my-github" target="_blank"><img src="../public/images/github.png" alt="github-logo"></a>
+        <a href="https://github.com/kirillrub108?tab=repositories" target="_blank" class="text-decoration-none">
+            <h5 class="my-projects-more">Мои проекты</h5>
+        </a>
+    </div>
+    
 {% endblock %}

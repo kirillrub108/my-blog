@@ -1,0 +1,51 @@
+.card,
+.pagination .page-item .page-link,
+.dropdown-menu {
+        border-color: rgba(0, 146, 0, 0.521);
+}
+
+.text {
+    color: rgb(0, 140, 0);
+}
+
+footer span,
+.post-date {
+    color: rgba(0, 145, 0, 0.726);
+}
+
+.navbar a {
+    color: rgb(0, 206, 0);
+}
+
+.navbar a:hover {
+    color: rgb(0, 255, 0);
+}
+
+.dropdown-menu.show .dropdown-item {
+    color: rgb(0, 170, 0);
+}
+
+.title,
+.post-title,
+.post-more,
+.my-projects-more {
+    color: rgb(0, 206, 0);
+}
+
+.page-link {
+    color: rgb(0, 206, 0);
+}
+
+.page-link:hover {
+    color: rgb(0, 255, 0);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: rgb(0, 206, 0);
+    border-color: rgb(0, 179, 0);
+}
+
+.my-github>img {
+    width: 6em;
+}
+
