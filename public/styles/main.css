@@ -31,6 +31,10 @@ footer span,
     color: rgb(0, 170, 0);
 }
 
+.dropdown-menu.show .dropdown-item:active {
+    background-color: rgba(0, 170, 0, 0);
+}
+
 .title,
 .post-title,
 .post-more,
