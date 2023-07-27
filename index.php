@@ -2,6 +2,7 @@
 
 use Slim\Factory\AppFactory;
 use Blog\Route\AboutPage;
+use Blog\Route\AdminPage;
 use Blog\Route\BlogPage;
 use Blog\Route\HomePage;
 use Blog\Route\PostPage;
@@ -24,6 +25,9 @@ $app = AppFactory::create();
 $app->get('/', HomePage::class . ':execute');
 $app->get('/about', AboutPage::class);
 $app->get('/blog[/{page}]', BlogPage::class);
+$app->get('/admin', AdminPage::class . ':LoginPage');
+$app->post('/AdminLogin', AdminPage::class . ':AdminLogin');
+$app->post('/AdminDownload', AdminPage::class . ':AdminDownload');
 $app->get('/{url_key}', PostPage::class);
 
 $app->run();

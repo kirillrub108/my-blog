@@ -1,7 +1,13 @@
+body,
+.navbar,
+footer {
+    background: linear-gradient(90deg, #0400ff48 0%, #FFFFFF 13%, #fff 87%, #ff000048 100%);
+}
+
 .card,
 .pagination .page-item .page-link,
 .dropdown-menu {
-        border-color: rgba(0, 146, 0, 0.521);
+    border-color: rgba(0, 146, 0, 0.521);
 }
 
 .text {
@@ -49,3 +55,19 @@ footer span,
     width: 6em;
 }
 
+.repo_url {
+    color: rgb(224, 16, 16);
+}
+
+.repo_url:hover {
+    color: rgb(189, 0, 0);
+}
+
+@media (max-width: 755px) {
+
+    body,
+    .navbar,
+    footer {
+        background: #FFFFFF;
+    }
+}

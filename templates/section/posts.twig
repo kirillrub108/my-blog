@@ -7,7 +7,7 @@
             <a class="text-decoration-none" href="{{ url(post.url_key) }}">
                 <h5 class="card-title post-title"> {{ post.title|escape }} </h5>
             </a>
-            <p class="card-text text"> {{ post.description|escape[:100] }}... </p>
+            <p class="card-text text"> {{ post.description|escape }} </p>
             <a href="{{ url(post.url_key) }} " class="text-decoration-none post-more">Подробнее</a>
         </div>
     </div>

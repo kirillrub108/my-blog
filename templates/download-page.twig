@@ -1,0 +1,19 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+<h1 class="text-center mt-5">Загрузить пост</h1>
+<div class="container mt-4 col-md-10">
+    <form action="/AdminDownload" method="post">
+
+        <input class="form-control form-control-lg mb-3" type="text" name="title" placeholder="Заголовок" aria-label=".form-control-lg example">
+        <input class="form-control form-control-lg mb-3" type="text" name="url_key" placeholder="Отличительный ключ" aria-label=".form-control-lg example">
+        <input class="form-control form-control-lg mb-3" type="text" name="image_path" placeholder="Путь до изображения" aria-label=".form-control-lg example">
+        <textarea class="form-control form-control-lg mb-3" type="text" name="description" placeholder="Описание" aria-label=".form-control-lg example"></textarea>
+        <textarea class="form-control form-control-lg mb-3" type="text" name="content" placeholder="Контент" aria-label=".form-control-lg example"></textarea>
+        <input class="form-control form-control-lg mb-3" type="text" name="repo_url" placeholder="URL репозитория" aria-label=".form-control-lg example">
+
+        
+        <input type="submit" class="btn btn-success" value="Загрузить">
+    </form>
+</div>
+{% endblock %}
