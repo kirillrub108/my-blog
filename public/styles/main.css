@@ -7,28 +7,28 @@ footer {
 .card,
 .pagination .page-item .page-link,
 .dropdown-menu {
-    border-color: rgba(0, 146, 0, 0.521);
+    border-color: rgba(0, 131, 140, 0.568);
 }
 
 .text {
-    color: rgb(0, 140, 0);
+    color: rgb(0, 131, 140);
 }
 
 footer span,
 .post-date {
-    color: rgba(0, 145, 0, 0.726);
+    color: rgba(0, 131, 140, 0.726);
 }
 
 .navbar a {
-    color: rgb(0, 206, 0);
+    color: rgb(0, 158, 206);
 }
 
 .navbar a:hover {
-    color: rgb(0, 255, 0);
+    color: rgb(0, 195, 255);
 }
 
 .dropdown-menu.show .dropdown-item {
-    color: rgb(0, 170, 0);
+    color: rgb(0, 158, 206);
 }
 
 .dropdown-menu.show .dropdown-item:active {
@@ -39,20 +39,20 @@ footer span,
 .post-title,
 .post-more,
 .my-projects-more {
-    color: rgb(0, 206, 0);
+    color: rgb(0, 158, 206);
 }
 
 .page-link {
-    color: rgb(0, 206, 0);
+    color: rgb(0, 158, 206);
 }
 
 .page-link:hover {
-    color: rgb(0, 255, 0);
+    color: rgb(0, 195, 255);
 }
 
 .pagination .page-item.active .page-link {
-    background-color: rgb(0, 206, 0);
-    border-color: rgb(0, 179, 0);
+    background-color: rgb(0, 195, 255);
+    border-color: rgb(0, 158, 206);
 }
 
 .my-github>img {
@@ -60,11 +60,11 @@ footer span,
 }
 
 .repo_url {
-    color: rgb(224, 16, 16);
+    color: rgba(163, 0, 0, 0.7);
 }
 
 .repo_url:hover {
-    color: rgb(189, 0, 0);
+    color: rgb(163, 0, 0);
 }
 
 @media (max-width: 755px) {
