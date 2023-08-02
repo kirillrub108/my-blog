@@ -57,14 +57,16 @@ class AdminPage
                 $query = $this->database->getConnection()->prepare(
                     "INSERT INTO post (title, url_key, image_path, description, content, repo_url, published_date) VALUES (:title, :url_key, :image_path, :description, :content, :repo_url, :date)"
                 );
-                $query->bindParam(':title', $title);
-                $query->bindParam(':url_key', $url_key);
-                $query->bindParam(':image_path', $image_path);
-                $query->bindParam(':description', $description);
-                $query->bindParam(':content', $content);
-                $query->bindParam(':repo_url', $repo_url);
-                $query->bindParam(':date', $date);
-                $query->execute();
+                $query->execute([
+                    'title' => $title,
+                    'url_key' => $url_key,
+                    'image_path' => $image_path,
+                    'description' => $description,
+                    'content' => $content,
+                    'repo_url' => $repo_url,
+                    'date' => $date
+                
+                ]);
                 $body = 'Пост успешно загружен';
                 $response->getBody()->write($body);
             } catch (PDOException $e) {
